@@ -158,3 +158,222 @@ for word in words:
 # readlines는 여러 입력을 한번에 바아 list로 return해주는 매서드이다.
 # 각각의 문장의 마지막에는 개행문자('\n)가 함께 저장되므로 list에 접근하여 
 #개별 원소를 출력할 때는 rstrip 매서드를 활용하여 개행문자를 제거해 줍니다.
+
+#단어 공부 1157 
+# 문제
+# 알파벳 대소문자로 된 단어가 주어지면, 이 단어에서 가장 많이 사용된 알파벳이 무엇인지 알아내는 프로그램을 작성하시오. 단, 대문자와 소문자를 구분하지 않는다.
+
+# 입력
+# 첫째 줄에 알파벳 대소문자로 이루어진 단어가 주어진다. 주어지는 단어의 길이는 1,000,000을 넘지 않는다.
+
+# 출력
+# 첫째 줄에 이 단어에서 가장 많이 사용된 알파벳을 대문자로 출력한다. 단, 가장 많이 사용된 알파벳이 여러 개 존재하는 경우에는 ?를 출력한다.
+#나의 풀이
+word = input() # 단어 입력
+word = word.lower() # 단어를 전부 소문자로 변경
+word = list(word) #리스트로 형태 변환
+#각각의 알파벳의 입력횟수
+total_a = 0
+total_b = 0
+total_c = 0
+total_d = 0
+total_e = 0
+total_f = 0
+total_g = 0
+total_h = 0
+total_i = 0
+total_j = 0
+total_k = 0
+total_l = 0
+total_m = 0
+total_n = 0
+total_o = 0
+total_p = 0
+total_q = 0
+total_r = 0
+total_s = 0
+total_t = 0
+total_u = 0
+total_v = 0
+total_w = 0
+total_x = 0
+total_y = 0
+total_z = 0
+#해당 알파벳이 입력될때마다 카운트+1
+for i in word:
+    if i == 'a':
+        total_a += 1
+    elif i == 'b':
+        total_b += 1
+    elif i == 'c':
+        total_c += 1
+    elif i == 'd':
+        total_d += 1
+    elif i == 'e':
+        total_e += 1
+    elif i == 'f':
+        total_f += 1
+    elif i == 'g':
+        total_g += 1
+    elif i == 'h':
+        total_h += 1
+    elif i == 'i':
+        total_i += 1
+    elif i == 'j':
+        total_j += 1
+    elif i == 'k':
+        total_k += 1
+    elif i == 'l':
+        total_l += 1
+    elif i == 'm':
+        total_m += 1
+    elif i == 'n':
+        total_n += 1
+    elif i == 'o':
+        total_o += 1
+    elif i == 'p':
+        total_p += 1
+    elif i == 'q':
+        total_q += 1
+    elif i == 'r':
+        total_r += 1
+    elif i == 's':
+        total_s += 1
+    elif i == 't':
+        total_t += 1
+    elif i == 'u':
+        total_u += 1
+    elif i == 'v':
+        total_v += 1
+    elif i == 'w':
+        total_w += 1
+    elif i == 'x':
+        total_x += 1
+    elif i == 'y':
+        total_y += 1
+    elif i == 'z':
+        total_z += 1
+#각 알파벳 카운트들을 리스트에 저장후 크기순 정렬
+my_list = []
+my_list.append(total_a)
+my_list.append(total_b)
+my_list.append(total_c)
+my_list.append(total_d)
+my_list.append(total_e)
+my_list.append(total_f)
+my_list.append(total_g)
+my_list.append(total_h)
+my_list.append(total_i)
+my_list.append(total_j)
+my_list.append(total_k)
+my_list.append(total_l)
+my_list.append(total_m)
+my_list.append(total_n)
+my_list.append(total_o)
+my_list.append(total_p)
+my_list.append(total_q)
+my_list.append(total_r)
+my_list.append(total_s)
+my_list.append(total_t)
+my_list.append(total_u)
+my_list.append(total_v)
+my_list.append(total_w)
+my_list.append(total_x)
+my_list.append(total_y)
+my_list.append(total_z)
+sort_word = my_list.sort() #정보) sort()매서드는 리스트를 정렬하고 리턴값으로 None을 리턴하기 때문에 단순히 정렬만 하고싶다면 sorted(리스트)함수를 써도 된다
+#가장 큰 카운트를 찾는다
+max_word = max(my_list)
+#단어가 1글자 일때는 해당 단어를 대문자로 출력
+if len(word) == 1:
+    word = ''.join(word)
+    s = word.upper()
+    print(s)
+#카운트가 같은 알파벳이 있을경우 ?출력
+elif my_list[len(my_list)-1] == my_list[len(my_list)-2]:
+    print('?')
+#가장 큰 카운터를 가진 알파벳을 대문자로 출력한다
+elif max_word == total_a :
+    print('A')
+elif max_word == total_b :
+    print('B')
+elif max_word == total_c :
+    print('C')
+elif max_word == total_d :
+    print('D')
+elif max_word == total_e :
+    print('E')
+elif max_word == total_f :
+    print('F')
+elif max_word == total_g :
+    print('G')
+elif max_word == total_h :
+    print('H')
+elif max_word == total_i :
+    print('I')
+elif max_word == total_j :
+    print('J')
+elif max_word == total_k :
+    print('K')
+elif max_word == total_l :
+    print('L')
+elif max_word == total_m :
+    print('M')
+elif max_word == total_n :
+    print('N')
+elif max_word == total_o :
+    print('O')
+elif max_word == total_p :
+    print('P')
+elif max_word == total_q :
+    print('Q')
+elif max_word == total_r :
+    print('R')
+elif max_word == total_s :
+    print('S')
+elif max_word == total_t :
+    print('T')
+elif max_word == total_u :
+    print('U')
+elif max_word == total_v :
+    print('V')
+elif max_word == total_w :
+    print('W')
+elif max_word == total_x :
+    print('X')
+elif max_word == total_y :
+    print('Y')
+elif max_word == total_z :
+    print('Z')
+# 생각보다 너무 노가다만 한거같네...
+
+#다른 사람 풀이
+# upper 메소드를 사용하여 전체 문자를 대문자로 변환하여 변수에 저장한다.
+# 비교를 하기 위해 set함수를 사용하여 중복된 문자값을 제거한 후 변수에 저장한다.
+# for문을 이용하여 알파벳이 사용된 횟수를 리스트에 저장한다.
+# if 문을 사용하여 출력문을 작성하고, 알파벳이 사용된 갯주 중 1보다 크면 물음표를 출력하게 한다.
+# 최대값이 하나라면 숫자 리스트 중에서 가장 큰 수의 위치를 index로 찾아 인덱스에 위치한 문자열을 출력한다.
+word = input().upper()
+word_list = list(set(word))#set() 함수는 파이썬 내장 함수 중 하나로, 주어진 시퀀스(리스트, 튜플 등)나 다른 반복 가능한 객체에서 중복된 요소를 제거하고 유일한 요소들로 이루어진 집합(set)을 생성합니다.
+#set()함수 예시
+my_list = [1, 2, 2, 3, 4, 4, 5]
+unique_set = set(my_list)
+print(unique_set)  # 출력: {1, 2, 3, 4, 5}
+#==========================================
+cnt = []
+for i in word_list:
+  count = word.count #count() 함수는 리스트, 튜플, 문자열 등의 시퀀스에서 특정 요소의 등장 횟수를 세는 파이썬 내장 함수입니다. 이 함수는 주어진 요소의 등장 횟수를 반환합니다.
+  cnt.append(count(i))
+
+if cnt.count(max(cnt)) > 1:#가장 큰 카운트가 여러개 1보다 크다면
+  print("?") #? 출력
+
+else: #아니면
+  print(word_list[(cnt.index(max(cnt)))]) #숫자 리스트 중에서 가장 큰 수의 위치를 index로 찾아 인덱스에 위치한 문자열을 출력한다.
+#   upper메소드의 사용법 대하여 알 수 있었다.
+# count메소드의 사용법에 대해 알 수 있었다.
+# index, max 함수에 대해 알 수 있었다.
+#count 예시
+my_list = [1, 2, 2, 3, 3, 3, 4, 5]
+count_of_3 = my_list.count(3)
+print(count_of_3)  # 출력: 3
