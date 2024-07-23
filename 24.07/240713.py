@@ -15,3 +15,32 @@
 
 # 출력
 # 각 테스트 케이스에 대해서, n보다 크고, 2n보다 작거나 같은 소수의 개수를 출력한다.
+
+# 풀이
+
+import sys
+input = sys.stdin.readline
+
+# 소수 판별
+def Check_sosu(x):
+    if x < 2:  # 0과 1은 소수가 아님
+        return False
+    for i in range(2,int(x**0.5)+1):
+        if x%i==0:
+            return False
+    return True
+
+while True:
+    # 입력
+    n = int(input().strip())
+    # 0이 입력되면 종료
+    if n == 0:
+        break
+    # 소수의 개수
+    sosu = 0
+    for i in range(n+1,2*n+1):
+        if Check_sosu(i) == True:
+            sosu += 1
+        else:
+            pass
+    print(sosu)
