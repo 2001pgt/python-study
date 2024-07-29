@@ -16,6 +16,37 @@
 # 마지막에 열려 있는 창문의 개수를 출력한다.
 
 # 풀이
+
 # 입력
-# 출력
+
 import sys
+input = sys.stdin.readline
+
+N = int(input())
+
+# 빈 딕셔너리 생성
+dict = {}
+# 창문 개수 만큼 value가 1인 key값 추가
+for i in range(1,N+1):
+    dict[i] = 1
+# n번째 사람이 n의 배수의 위치한 창문을 열거나 닫는다
+# n번째 사람
+cnt = 1
+num = 2
+while cnt <= N:
+    for i in range(2,N+1,num):
+        if dict[i] == 1:
+            dict[i] = 0
+        elif dict[i] == 0:
+            dict[i] = 1
+    num += 1
+    print(dict)
+    cnt += 1
+
+result = 0
+for i in range(1,N+1):
+    if dict[i] == 1:
+        result += 1
+print(result)
+    
+
