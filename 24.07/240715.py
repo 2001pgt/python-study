@@ -48,5 +48,6 @@ for i in range(1,N+1):
     if dict[i] == 1:
         result += 1
 print(result)
+# 흠...
     
 
