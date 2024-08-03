@@ -48,5 +48,16 @@ for i in range(1,N+1):
     if dict[i] == 1:
         result += 1
 print(result)
-# 흠..
+
+# 다른 풀이
+# 이 문제는 N 이 21억 개 까지 가능함으로 경우수를 반복해서 답을 찾는 것 보다
+# 수학적 규칙을 찾는 것이 올바른 풀이 이다.
+import sys
+N = int(sys.stdin.readline())
+result = 0
+x = 1
+while x*x <= N:
+    x += 1
+    result +=1
+print(result)
 
