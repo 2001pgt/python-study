@@ -18,3 +18,47 @@
 
 # 출력
 # 출력을 요구하는 명령이 주어질 때마다 명령의 결과를 한 줄에 하나씩 출력한다.
+
+# 풀이
+# 자료구조 중 스택을 구현하는 문제이다.
+
+# 입력
+import sys
+input = sys.stdin.readline
+
+N = int(input().strip())
+
+def append(A,x):
+    A.append(x)
+
+def pop(stack,x):
+    pass
+
+def getStack(stack):
+    return len(stack)
+
+def cleanstack(stack):
+    if len(stack) == 0:
+        return 1
+    else:
+        return 0
+def checkstack(stack,x):
+    pass
+stack = [1,2,3,4]
+for _ in range(N):
+    try:
+        a,b = map(int,input().strip().split())
+    except ValueError:
+        a = int(input())
+        b = None
+    print(a,b)
+    if a == 1:
+        append(stack,b)
+    elif a == 2:
+        pop(a)
+    elif a == 3:
+        print(getStack(stack))
+    elif a == 4:
+        print(cleanstack(stack))
+    elif a == 5:
+        checkstack(stack,a)
