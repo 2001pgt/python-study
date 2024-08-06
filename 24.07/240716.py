@@ -62,4 +62,4 @@ for _ in range(N):
         print(cleanstack(stack))
     elif a == 5:
         checkstack(stack,a)
-# 스택 쉽지 않네
+# 스택 쉽지 
