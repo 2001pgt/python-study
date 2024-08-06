@@ -60,8 +60,8 @@ for _ in range(N):
         b = None
     else:
         a = int(c[0])
-        b = int(c[2])
-   
+        b = int("".join(c[-(len(c)-1):]))
+    
     # 1 : 정수 X를 스택에 넣는다.
     if a == 1:
         add_stack(stack,b)
@@ -77,4 +77,4 @@ for _ in range(N):
     # 5: 스택에 정수가 있다면 맨 위의 정수를 출력한다. 없다면 -1을 대신 출력한다.
     elif a == 5:
         print(checkstack(stack))
-   
+# 스택 정복 
