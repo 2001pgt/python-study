@@ -19,3 +19,37 @@
 # 재민이가 최종적으로 적어 낸 수의 합을 출력한다. 최종적으로 적어낸 수의 합은 231-1보다 작거나 같은 정수이다.
 
 # 풀이
+# 지난 문제의 스택을 이용하여 풀어보자
+import sys
+input = sys.stdin.readline
+stack = []
+N = int(input().strip())
+
+def add_stack(stack,x):
+    stack.append(x)
+    
+def pop(stack):
+    stack.pop()
+
+def getStack(stack):
+    return len(stack)
+
+def clean_check_stack(stack):
+    if len(stack) == 0:
+        return 1
+    else:
+        return 0
+def checkstack(stack):
+    if len(stack) == 0:
+        return -1
+    else:
+        return stack[-1]
+
+for _ in range(N):
+    a = int(input())
+    if a == 0:
+        pop(stack)
+    else:
+        add_stack(stack,a)
+print(sum(stack))
+# 지난번 만든 스택에서 pop부분을 살짝 수정하면 된다.
