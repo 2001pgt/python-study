@@ -21,9 +21,6 @@ def Check_VPS():
 for _ in range(T):
     vps = list(input().strip().split(''))
 
-
-
-
     if Check_VPS:
         print("YES")
     else:
