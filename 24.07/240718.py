@@ -20,8 +20,15 @@ def Check_VPS():
     pass 
 for _ in range(T):
     vps = list(input().strip().split(''))
+    # vps는 ( 먼저 들어오고 )이 두 괄호의 개수도 같아야하며 중간에 vps가 한번 만들어진뒤에는 )괄호가 먼저 와서는 안된다
+    
+
+
+
+
 
     if Check_VPS:
         print("YES")
     else:
         print("NO")
+        
