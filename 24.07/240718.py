@@ -16,19 +16,43 @@ import sys
 input = sys.stdin.readline
 
 T = int(input()) # 테스트 횟수
-def Check_VPS():
-    pass 
-for _ in range(T):
-    vps = list(input().strip().split(''))
-    # vps는 ( 먼저 들어오고 )이 두 괄호의 개수도 같아야하며 중간에 vps가 한번 만들어진뒤에는 )괄호가 먼저 와서는 안된다
-    
 
-
-
-
-
-    if Check_VPS:
-        print("YES")
+# 스택
+def add_stack(stack,x):
+    stack.append(x)
+def pop(stack):
+    if len(stack) == 0:
+        return print(-1)
     else:
+        stack.pop()
+def checkstack(stack):
+    if len(stack) == 0:
+        return -1
+    else:
+        return stack[-1]
+
+# 스택을 활용하여 괄호가 완성되면 팝한다
+# 구현
+# 입력 받은 괄호를 스택형태로 저장한다
+# 만약 () 형태가 완성되면 2개를 팝한다
+# 그리고 최종적으로 스택에 남은 괄호가 있다면 vps가 아니다
+# 스택에 남은 괄호가 없다면 vps이다
+for _ in range(T):
+    stack = []
+    check_vps = input().strip()
+    # print(check_vps)
+    # print(check_vps[0])
+    for i in range(len(check_vps)):
+        add_stack(stack,check_vps[i])
+        if checkstack(stack) == ")"  and len(stack) > 1 and stack[-2] == "(":
+            pop(stack)
+            pop(stack)
+        # print(f'현재 스택{stack}')  
+    # print(f'결과 스택{stack}')    
+    if len(stack) > 0:
         print("NO")
+    else:
+        print("YES")
+
+    
         
