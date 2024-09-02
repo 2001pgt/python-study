@@ -1,4 +1,4 @@
-# 큐 2
+# 큐 2 18258
 # 문제
 # 정수를 저장하는 큐를 구현한 다음, 입력으로 주어지는 명령을 처리하는 프로그램을 작성하시오.
 
@@ -15,3 +15,64 @@
 
 # 출력
 # 출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.
+
+# 풀이
+# 큐 구현
+import sys
+input = sys.stdin.readline
+from collections import deque
+def push(queue,num):
+    queue.append(num)
+
+def pop(queue):
+    if len(queue) == 0:
+        print(-1)
+    else:
+        print(queue[0])
+        queue.popleft()
+
+def size(queue):
+    print(len(queue))
+
+def empty(queue):
+    if len(queue) == 0:
+        print(1)
+    else:
+        print(0)
+
+def front(queue):
+    if len(queue) == 0:
+        print(-1)
+    else:
+        print(queue[0])
+def back(queue):
+    if len(queue) == 0:
+        print(-1)
+    else:
+        print(queue[-1])
+
+T = int(input())
+queue = deque()
+for _ in range(T):
+    n = list(input().rstrip().split())
+    # 만약 정수를 준다면
+    if n[0] == "push":
+        push(queue,int(n[-1]))
+        continue
+    elif n[0] == "pop":
+        pop(queue)
+        continue
+    elif n[0] == "size":
+        size(queue)
+        continue
+    elif n[0] == "empty":
+        empty(queue)
+        continue
+    elif n[0] == "front":
+        front(queue)
+        continue
+    elif n[0] == "back":
+        back(queue)
+        continue
+
+        
