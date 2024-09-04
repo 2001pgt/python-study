@@ -46,16 +46,20 @@ def back(queue):
         print(-1)
     else:
         print(queue[-1])
+# 1~N 까지 정수 큐 생성
 result = deque(range(1,N+1))
 # print(result)
 while(True):
-    # 1~N 까지 정수 리스트 생성
-
-    if len(result) <= 1:
+    # 만약 큐 안에 원소가 1개 이하로 남으면
+    if len(result) <= 1: 
+        # 해당 원소를 출력하라
         print(result[0])
         break
+    # 맨앞 원소를 제거
     pop(result)
+    # 맨 원소를 맨뒤로 이동
     push(result,result[0])
+    # 맨뒤로 보냈으므로 원래 자리의 원소는 삭제
     pop(result)
 
     
