@@ -11,3 +11,70 @@
 
 # 출력
 # 예제와 같이 요세푸스 순열을 출력한다.
+
+# 풀이
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+# 큐 구현
+def push(queue,num):
+    queue.append(num)
+
+def pop(queue):
+    queue.popleft()
+
+def size(queue):
+    print(len(queue))
+
+def empty(queue):
+    if len(queue) == 0:
+        print(1)
+    else:
+        print(0)
+
+def front(queue):
+    if len(queue) == 0:
+        print(-1)
+    else:
+        print(queue[0])
+def back(queue):
+    if len(queue) == 0:
+        print(-1)
+    else:
+        print(queue[-1])
+# 입력
+N, K = map(int,input().rstrip().split())
+
+# 요세푸스 순열 구현
+# K 번째 자리 숫자를 제거하기 위해 
+# 맨 앞 인자를 뒤로 k-1번 옮긴다.
+# 그리고 맨앞의 숫자를 pop한 후 결과 리스트에 옮긴다 
+# 또 같은 방법을 반복한다.
+
+# 1~N까지 원형 테이블생성
+table = deque(range(1,N+1))
+result = []
+cnt = 0
+while(True):
+    if len(table) <= 0:
+        print("<",end="")
+        for i in range(len(result)):
+            print(result[i],end="")
+            if i == len(result)-1:
+                print(">")
+            else:
+                print(",",end=" ")
+        break
+    # 맨앞의 원소를 k-1번 맨 뒤로 이동
+    for _ in range(K-1):
+        # 맨앞의 원소를 맨 뒤로 이동
+        push(table,table[0])
+        # 원래 자리의 원소 삭제
+        pop(table)
+    # 맨 앞 원소를 리스트로 옮긴뒤 pop
+    result.append(table[0])
+    pop(table)
+    
+
+    
