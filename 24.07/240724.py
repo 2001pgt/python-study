@@ -21,3 +21,81 @@
 
 # 출력
 # 출력을 요구하는 명령이 주어질 때마다 명령의 결과를 한 줄에 하나씩 출력한다.
+
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+# 풀이 
+
+# 덱 구현
+def frontin(deque,x):
+    deque.insert(0,x)
+
+def backin(deque,x):
+    deque.append(x)
+
+def frontpop(deque):
+    if len(deque) == 0:
+        print(-1)
+    else:
+        print(deque[0])
+        deque.popleft()
+
+def backpop(deque):
+    if len(deque) == 0:
+        print(-1)
+    else:
+        print(deque[-1])
+        deque.pop()
+
+def get_deque(deque):
+    print(len(deque))
+
+def isempty(deque):
+    if len(deque) == 0:
+        print(1)
+    else:
+        print(0)
+
+def get_front(deque):
+    if len(deque) == 0:
+        print(-1)
+    else:
+        print(deque[0])
+
+def get_back(deque):
+    if len(deque) == 0:
+        print(-1)
+    else:
+        print(deque[-1])
+
+T = int(input().rstrip())
+array = deque()
+for _ in range(T):
+    command = list(input().rstrip().split())
+    if command[0] == "1":
+        frontin(array,int(command[-1]))
+    elif command[0] == "2":
+        backin(array,int(command[-1]))         
+    elif command[0] == "3":
+        frontpop(array)
+    elif command[0] == "4":
+        backpop(array)
+    elif command[0] == "5":
+        get_deque(array)
+    elif command[0] == "6":
+        isempty(array)
+    elif command[0] == "7":
+        get_front(array)
+    elif command[0] == "8":
+        get_back(array)
+
+
+
+
+
+
+
+
+
