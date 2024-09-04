@@ -13,3 +13,50 @@
 
 # 출력
 # 첫째 줄에 남게 되는 카드의 번호를 출력한다.
+
+# 풀이
+
+import sys
+from collections import deque
+input = sys.stdin.readline
+N = int(input().rstrip())
+
+def push(queue,num):
+    queue.append(num)
+
+def pop(queue):
+    queue.popleft()
+
+def size(queue):
+    print(len(queue))
+
+def empty(queue):
+    if len(queue) == 0:
+        print(1)
+    else:
+        print(0)
+
+def front(queue):
+    if len(queue) == 0:
+        print(-1)
+    else:
+        print(queue[0])
+def back(queue):
+    if len(queue) == 0:
+        print(-1)
+    else:
+        print(queue[-1])
+result = deque(range(1,N+1))
+# print(result)
+while(True):
+    # 1~N 까지 정수 리스트 생성
+
+    if len(result) <= 1:
+        print(result[0])
+        break
+    pop(result)
+    push(result,result[0])
+    pop(result)
+
+    
+
