@@ -91,17 +91,18 @@ a = int(input())
 b = int(input())
 c = int(input())
 
-
-# 위의 조건들을 if문으로 나열해보겠다.
-if a == b == c == 60:
-    print('Equilateral')
-elif a + b + c == 180 and a == b or b == c or a == c:
-    print('Isosceles')
-elif a + b + c == 180 and a != b != c:
-    print('Scalene')
-elif a + b + c != 180:
-    print('Error')
-
+# =================================================
+# # 위의 조건들을 if문으로 나열해보겠다.
+# if a == b == c == 60:
+#     print('Equilateral')
+# elif a + b + c == 180 and a == b or b == c or a == c:
+#     print('Isosceles')
+# elif a + b + c == 180 and a != b != c:
+#     print('Scalene')
+# elif a + b + c != 180:
+#     print('Error')
+# 데이터 변경으로인한 재채점 후 오답임이 확인됨
+# =========================================
 # 다른 풀이
 a = int(input())
 b = int(input())
