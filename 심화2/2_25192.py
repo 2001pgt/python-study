@@ -42,7 +42,9 @@ for i in range(n):
         # textlist를 비운다
         textlist.clear()
         pass
+        # text 가 textlist 안에 없다면 
     elif text not in textlist:
+        # text를 추가후 res + 1
         textlist.add(text)
         res += 1
 print(res)
